@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.example.wangxin.myapplication"
+        minSdkVersion 16
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+repositories {
+    maven {
+        url "http://repo.baichuan-android.taobao.com/content/groups/BaichuanRepositories"
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    testCompile 'junit:junit:4.12'
+    // compile 'com.taobao.android:alisdk-hotfix:1.4.0'
+    compile(name: 'alisdk-hotfix-1.4.0', ext: 'aar')
+    compile files('libs/utdid4all-1.1.5.3_proguard.jar')
+    compile files('libs/gson-2.2.1.jar')
+    compile 'com.jakewharton:butterknife:8.0.0'
+    compile 'com.jakewharton:butterknife-compiler:8.0.0'
+    //compile 'com.github.bumptech.glide:glide:3.5.2'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile files('libs/BaiduLBS_Android.jar')
+    //flexWrap="wrap"属性，在当前行空间不足的情况下FlexboxLayout将把view放在下一行
+    compile 'com.google.android:flexbox:0.1.2'
+    //但是这样我们只能使用代码来进行布局，而ConstraintLayout让布局回归原始，拖动即可。比起常规控件拖动基本是分分钟高潮的节奏
+    //compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha1'
+    compile files('libs/BaiduNaviSDK_3.2.0.jar')
+    compile files('libs/httpmime-4.1.2.jar')
+}

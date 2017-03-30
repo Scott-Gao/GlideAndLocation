@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <!--
+    flexDirection
+
+flexDirection 属性决定主轴的方向（即项目的排列方向）。类似 LinearLayout 的 vertical 和 horizontal。
+
+有四个值可以选择：
+
+    row（默认值）：主轴为水平方向，起点在左端。
+
+    row-reverse：主轴为水平方向，起点在右端。
+
+    column：主轴为垂直方向，起点在上沿。
+
+    column-reverse：主轴为垂直方向，起点在下沿。
+
+
+
+
+    -->
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="flex_start"
+        app:alignItems="flex_start"
+
+
+        >
+        <!--
+
+        flexWrap
+
+        默认情况下 Flex 跟 LinearLayout 一样，都是不带换行排列的，但是flexWrap属性可以支持换行排列。有三个值：
+
+            nowrap ：不换行
+
+            wrap：按正常方向换行
+
+            wrap-reverse：按反方向换行-->
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:text="111"/>
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:text="222"/>
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            android:text="333"/>
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="20dp"
+            android:text="444"/>
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:text="555"/>
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="20dp"
+            android:text="666"/>
+
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+</LinearLayout>
